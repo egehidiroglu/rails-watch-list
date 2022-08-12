@@ -5,6 +5,7 @@ class BookmarksController < ApplicationController
     @bookmark.list = list
     @bookmark.save
     redirect_to list_path(list)
+
   end
 
   def new
