@@ -1,7 +1,30 @@
-<h1>Lists</h1>
-<% @lists.each do |list| %>
-  <div class="card">
-    <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: fill, class: 'card-img-top' %>
-    <h3 class="card-title"><%= link_to list.name, list_path(list) %></h3>
+<div class="banner">
+  <div class="container">
+    <h1>Save any kind of movies</h1>
   </div>
-<% end %>
+</div>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <div class="container-fluid">
+        <h4>My Lists</h4>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <%= link_to 'New List', new_list_path, class: 'btn btn-flat' %>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+<div class="cards">
+  <% @lists.each do |list| %>
+    <div class="card-category"
+      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')"
+    >
+      <h3 class="card-title"><%= link_to list.name, list_path(list) %></h3>
+    </div>
+  <% end %>
+</div>
