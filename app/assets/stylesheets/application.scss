@@ -27,3 +27,14 @@
 .footer {
   margin-top: 20px;
 }
+
+.navbar {
+  justify-content: space-between;
+}
+
+#links {
+  display: flex;
+  a {
+    margin-left: 10px;
+  }
+}
