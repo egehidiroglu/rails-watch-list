@@ -1,6 +1,7 @@
 <h1>Lists</h1>
 <% @lists.each do |list| %>
   <div class="card">
+    <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: fill, class: 'card-img-top' %>
     <h3 class="card-title"><%= link_to list.name, list_path(list) %></h3>
   </div>
 <% end %>
